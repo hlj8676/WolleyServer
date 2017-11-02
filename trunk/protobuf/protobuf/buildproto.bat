@@ -1,4 +1,4 @@
-echo - cleanup
+@echo off
 if exist "%~dp0/protocs" rmdir /s /q "%~dp0/protocs"
 mkdir "%~dp0/protocs"
 
@@ -6,12 +6,13 @@ cd %~dp0/proto
 for %%i in (*.proto) do (
 	echo %%i
 	..\protoc.exe --java_out=../protocs/ %%i
-)
-::cd ../protocs/
-::rename *.proto *.cs
+) 
+ 
 
-::for %%i in (*.cs) do (
-::	move %%i ../../../../SLG_Client/Assets/Scripts/Network/Message/
-::)
+set foldername="../../../WolleyServer/Network"
+set messagefoldername="../../../WolleyServer/Network/Message"
+if exist %messagefoldername% (rd /s /q %messagefoldername%)
+move /y %~dp0/protocs %messagefoldername%
+ 
 
 pause
