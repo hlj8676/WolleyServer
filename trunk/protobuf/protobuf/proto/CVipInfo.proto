@@ -1,3 +1,4 @@
+syntax = "proto2";
 package network.message;
 
 /** VIP通知信息 */

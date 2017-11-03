@@ -1,3 +1,4 @@
+syntax = "proto2";
 package network.message2;
 
 /** 状态码 */
