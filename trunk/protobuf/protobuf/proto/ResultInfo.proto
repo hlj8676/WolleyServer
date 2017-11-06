@@ -1,5 +1,4 @@
-syntax = "proto2";
-package network.message2;
+package network.message;
 
 /** 状态码 */
 enum Result{
